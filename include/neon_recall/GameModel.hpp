@@ -22,12 +22,14 @@ public:
   static constexpr int Width=21,Height=15;
   void generate(std::mt19937_64& rng,int round);
   void refreshPoison(std::mt19937_64& rng,int round,int frame);
+  void refreshPoison(std::mt19937_64& rng,int round,int frame,const std::array<Cell,2>& playerPositions);
   bool open(Cell c)const; bool poison(Cell c)const; void setPoison(Cell c,bool value);
   bool hasPoisonFreeRoute(int player)const;
+  bool hasPoisonFreeRouteFrom(Cell origin)const;
   std::uint64_t topologySignature()const;
   const std::vector<Cell>& solution(int player)const{return solutions_[player];}
   Cell treasure()const{return treasure_;} Cell start(int player)const{return starts_[player];}
-  int poisonCount()const;
+  int poisonCount()const; int choiceCount()const;
 private:
   int index(Cell c)const{return c.y*Width+c.x;} bool valid(Cell c)const{return c.x>=0&&c.y>=0&&c.x<Width&&c.y<Height;}
   std::array<bool,Width*Height> open_{}; std::array<bool,Width*Height> poison_{};

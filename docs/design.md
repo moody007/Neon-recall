@@ -20,7 +20,7 @@ Difficulty therefore comes from denser decisions and reduced observation—not i
 - The center vault and both spawns are connected.
 - No solution route is displayed; players must identify and memorize one.
 - Poison is concentrated on useful corridors/junctions, visible during memorization, and relocated before the next memory frame.
-- A greedy reachability check rejects any poison placement that would eliminate either player's final poison-free path.
+- A greedy reachability check rejects any poison placement that would eliminate the final poison-free path from either player's current position or respawn point.
 - Triggered poison disappears immediately; only the affected player returns to spawn.
 - Wall collisions do not cost health.
 - Poison consequences are predictable.
@@ -30,3 +30,5 @@ Difficulty therefore comes from denser decisions and reduced observation—not i
 ## Freshness
 
 The procedural maze is the main source of replay variety. Buff combinations add strategic identities: a speed build, a poison-resistant build, a memory-assistance build, or a high-health conservative build. Match-length-dependent draft size changes how reliably a player can assemble a preferred build.
+
+Difficulty also changes maze decision density. Early rounds retain a more tree-like structure, while later rounds open a guaranteed, increasing number of scored connectors. These connectors prioritize existing corridor intersections, producing more cells with three or four exits and more believable alternate directions during blackout.

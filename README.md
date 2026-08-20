@@ -15,7 +15,7 @@ The game separates perception from action:
 3. **Result** — reaching the center first earns the most points.
 4. **Buff Draft** — surviving players adapt their build before a newly generated round.
 
-Each round contains several short reveal/blackout frames. Wall and corridor topology is generated exactly once and locked for that entire round. Only poison relocates on a new frame. Hazards are weighted toward shortest corridors, junctions, and vault approaches, so they affect meaningful route decisions instead of decorating irrelevant dead ends. A fresh connected maze is generated only when the next numbered round begins.
+Each round contains several short reveal/blackout frames. Wall and corridor topology is generated exactly once and locked for that entire round. Only poison relocates on a new frame. Later rounds enforce progressively longer minimum routes to the vault and deliberately add more multi-direction junctions without accepting direct shortcuts. This creates plausible alternate directions and makes key-probing less informative. Hazards are weighted toward useful corridors, junctions, and vault approaches, so they affect meaningful route decisions instead of decorating irrelevant dead ends. A fresh connected maze is generated only when the next numbered round begins.
 
 ## Modes
 
@@ -39,7 +39,7 @@ Each round contains several short reveal/blackout frames. Wall and corridor topo
 
 ## Hazards and buffs
 
-Poison tiles change every frame. Placement is constrained: every proposed hazard is rejected if it would remove the last completely poison-free route for either player. A poison hit removes a heart, immediately clears that poison tile, and normally returns only that player to spawn; the maze, frame, timer, score, and round continue unchanged.
+Poison tiles change every frame. Placement is constrained: every proposed hazard is rejected unless each player retains a completely poison-free route from their current position to the vault. Respawn-to-vault routes are protected too. A poison hit removes a heart, immediately clears that poison tile, and normally returns only that player to spawn; the maze, frame, timer, score, and round continue unchanged.
 
 | Buff | Effect |
 |---|---|
