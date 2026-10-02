@@ -78,6 +78,9 @@ The first configure downloads pinned raylib 5.5. Requirements are CMake 3.20+, N
 
 ## Architecture
 
+For a file-by-file walkthrough, algorithm explanations, and interview-ready answers, see
+[the codebase guide](docs/CODEBASE_GUIDE.md).
+
 - `Maze`: deterministic depth-first maze carving, controlled loop insertion, BFS safe-route calculation, and poison placement
 - `GameModel`: reveal/blackout/result/draft/match state machine, movement, health, buffs, scores, rounds, and seeded RNG
 - `main.cpp`: raylib input, virtual-resolution rendering, menus, HUD, and local multiplayer presentation

@@ -1,3 +1,4 @@
+# Cross-platform verification of both the renderer-dependent build and headless logic tests.
 name: C++ build and tests
 
 on:
@@ -5,6 +6,7 @@ on:
   pull_request:
 
 jobs:
+  # Windows validates the primary desktop release environment.
   windows:
     runs-on: windows-latest
     steps:
@@ -16,6 +18,7 @@ jobs:
       - name: Test
         run: ctest --test-dir build -C Release --output-on-failure
 
+  # Linux additionally installs the native OpenGL/X11 headers raylib requires to compile.
   linux:
     runs-on: ubuntu-latest
     steps:

@@ -1,131 +1,305 @@
 <!doctype html>
+<!-- Static portfolio site. It markets the C++ game but does not embed or execute the game. -->
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070a18">
-  <meta name="description" content="Neon Recall is a competitive C++20 memory-maze game where the labyrinth disappears when movement begins.">
-  <meta property="og:title" content="Neon Recall: Blackout Heist">
-  <meta property="og:description" content="Study the maze. Survive the blackout. Reach the vault before your rival.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/neon-recall-menu.png">
-  <title>Neon Recall: Blackout Heist</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="nav-shell">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Neon Recall home"><span>NEON</span> RECALL</a>
-      <div class="nav-links">
-        <a href="#gameplay">Gameplay</a>
-        <a href="#systems">Systems</a>
-        <a href="#technical">Technical</a>
-      </div>
-      <a class="button button-small button-outline" href="https://github.com/griter-ui/neon-recall" target="_blank" rel="noreferrer">Source code</a>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot"></span> C++20 / RAYLIB / WINDOWS</p>
-        <h1>The maze vanishes.<br><em>Your memory doesn't.</em></h1>
-        <p class="hero-text">Study a neon labyrinth, memorize the danger, then race through total darkness to steal the central vault—solo or against a local rival.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/griter-ui/neon-recall/releases/download/v1.0.0/NeonRecall-Windows-v1.0.0.zip">Download for Windows <span aria-hidden="true">↓</span></a>
-          <a class="button button-ghost" href="#gameplay">See how it works</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070a18" />
+    <meta
+      name="description"
+      content="Neon Recall is a competitive C++20 memory-maze game where the labyrinth disappears when movement begins."
+    />
+    <meta property="og:title" content="Neon Recall: Blackout Heist" />
+    <meta
+      property="og:description"
+      content="Study the maze. Survive the blackout. Reach the vault before your rival."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/neon-recall-menu.png" />
+    <title>Neon Recall: Blackout Heist</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- Persistent navigation and a keyboard-accessible skip link support quick page traversal. -->
+    <header class="nav-shell">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Neon Recall home"
+          ><span>NEON</span> RECALL</a
+        >
+        <div class="nav-links">
+          <a href="#gameplay">Gameplay</a>
+          <a href="#systems">Systems</a>
+          <a href="#technical">Technical</a>
         </div>
-        <div class="hero-meta" aria-label="Project facts">
-          <div><strong>2</strong><span>game modes</span></div>
-          <div><strong>∞</strong><span>procedural mazes</span></div>
-          <div><strong>9</strong><span>strategic buffs</span></div>
+        <a
+          class="button button-small button-outline"
+          href="https://github.com/griter-ui/neon-recall"
+          target="_blank"
+          rel="noreferrer"
+          >Source code</a
+        >
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- Hero: project premise, release download, and visual identity. -->
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot"></span> C++20 / RAYLIB / WINDOWS
+          </p>
+          <h1>The maze vanishes.<br /><em>Your memory doesn't.</em></h1>
+          <p class="hero-text">
+            Study a neon labyrinth, memorize the danger, then race through total
+            darkness to steal the central vault—solo or against a local rival.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://github.com/griter-ui/neon-recall/releases/download/v1.0.0/NeonRecall-Windows-v1.0.0.zip"
+              >Download for Windows <span aria-hidden="true">↓</span></a
+            >
+            <a class="button button-ghost" href="#gameplay">See how it works</a>
+          </div>
+          <div class="hero-meta" aria-label="Project facts">
+            <div><strong>2</strong><span>game modes</span></div>
+            <div><strong>∞</strong><span>procedural mazes</span></div>
+            <div><strong>9</strong><span>strategic buffs</span></div>
+          </div>
         </div>
-      </div>
-      <div class="hero-visual">
-        <div class="screen-frame">
-          <div class="screen-top"><i></i><i></i><i></i><span>NEON RECALL // LIVE BUILD</span></div>
-          <img src="assets/neon-recall-menu.png" alt="Neon Recall game menu showing its dark neon visual style">
+        <div class="hero-visual">
+          <div class="screen-frame">
+            <div class="screen-top">
+              <i></i><i></i><i></i><span>NEON RECALL // LIVE BUILD</span>
+            </div>
+            <img
+              src="assets/neon-recall-menu.png"
+              alt="Neon Recall game menu showing its dark neon visual style"
+            />
+          </div>
+          <div class="float-card float-card-one">
+            <b>MEMORY FRAME</b><span>Movement locked</span>
+          </div>
+          <div class="float-card float-card-two">
+            <b>TOTAL BLACKOUT</b><span>Trust the route</span>
+          </div>
         </div>
-        <div class="float-card float-card-one"><b>MEMORY FRAME</b><span>Movement locked</span></div>
-        <div class="float-card float-card-two"><b>TOTAL BLACKOUT</b><span>Trust the route</span></div>
-      </div>
-    </section>
+      </section>
 
-    <section class="loop-section" id="gameplay">
-      <div class="section-heading">
-        <p class="eyebrow">THE CORE LOOP</p>
-        <h2>See it. Lose it. <em>Recall it.</em></h2>
-        <p>Every round alternates between short observation windows and complete spatial blackout. The maze remains locked; the poison does not.</p>
-      </div>
-      <div class="loop-grid">
-        <article class="loop-card"><span class="step cyan">01</span><div class="mini-maze reveal-maze" aria-hidden="true"></div><h3>Memorize</h3><p>Study walls, poison, the central vault, and your position. There is no suggested solution path.</p></article>
-        <article class="loop-card featured"><span class="step pink">02</span><div class="blackout-demo" aria-hidden="true"><span>BLACKOUT</span></div><h3>Navigate blind</h3><p>The maze, player, poison, and treasure disappear. Collision still exists. Move entirely from memory.</p></article>
-        <article class="loop-card"><span class="step gold">03</span><div class="vault-demo" aria-hidden="true"><span>$</span></div><h3>Reach the vault</h3><p>Arrive first for the largest score, then draft a personal buff before the next procedural round.</p></article>
-      </div>
-    </section>
-
-    <section class="split-section" id="systems">
-      <div class="mode-copy">
-        <p class="eyebrow">TWO WAYS TO PLAY</p>
-        <h2>Memory test or<br><em>rival heist.</em></h2>
-        <div class="mode-tabs" role="tablist" aria-label="Game modes">
-          <button class="mode-tab active" role="tab" aria-selected="true" data-mode="solo">Solo run</button>
-          <button class="mode-tab" role="tab" aria-selected="false" data-mode="versus">Two-player</button>
+      <!-- Gameplay loop mirrors the Reveal -> Blackout -> Vault model state flow. -->
+      <section class="loop-section" id="gameplay">
+        <div class="section-heading">
+          <p class="eyebrow">THE CORE LOOP</p>
+          <h2>See it. Lose it. <em>Recall it.</em></h2>
+          <p>
+            Every round alternates between short observation windows and
+            complete spatial blackout. The maze remains locked; the poison does
+            not.
+          </p>
         </div>
-        <div class="mode-panel" id="mode-copy" aria-live="polite">
-          <h3>Ten-round memory gauntlet</h3>
-          <p>Beat increasingly dense hazard layouts, preserve health, and build a score across ten fresh mazes. Disable buffs for a pure memory challenge.</p>
-          <ul><li>WASD movement</li><li>Optional power-up progression</li><li>Speed and health scoring</li></ul>
+        <div class="loop-grid">
+          <article class="loop-card">
+            <span class="step cyan">01</span>
+            <div class="mini-maze reveal-maze" aria-hidden="true"></div>
+            <h3>Memorize</h3>
+            <p>
+              Study walls, poison, the central vault, and your position. There
+              is no suggested solution path.
+            </p>
+          </article>
+          <article class="loop-card featured">
+            <span class="step pink">02</span>
+            <div class="blackout-demo" aria-hidden="true">
+              <span>BLACKOUT</span>
+            </div>
+            <h3>Navigate blind</h3>
+            <p>
+              The maze, player, poison, and treasure disappear. Collision still
+              exists. Move entirely from memory.
+            </p>
+          </article>
+          <article class="loop-card">
+            <span class="step gold">03</span>
+            <div class="vault-demo" aria-hidden="true"><span>$</span></div>
+            <h3>Reach the vault</h3>
+            <p>
+              Arrive first for the largest score, then draft a personal buff
+              before the next procedural round.
+            </p>
+          </article>
         </div>
-      </div>
-      <div class="scoreboard" aria-label="Example multiplayer leaderboard">
-        <div class="score-head"><span>ROUND 5 / 7</span><span>LIVE LEADERBOARD</span></div>
-        <div class="player-row winner"><span class="rank">1</span><span class="player-orb cyan-bg">P1</span><div><b>PLAYER ONE</b><small>3 vaults reached</small></div><strong>3,480</strong></div>
-        <div class="player-row"><span class="rank">2</span><span class="player-orb pink-bg">P2</span><div><b>PLAYER TWO</b><small>2 vaults reached</small></div><strong>2,910</strong></div>
-        <div class="score-note"><span>Winner drafts first</span><span>Rival gets a counter-pick</span></div>
-      </div>
-    </section>
+      </section>
 
-    <section class="buff-section">
-      <div class="section-heading compact"><p class="eyebrow">BUILD YOUR EDGE</p><h2>Nine buffs. <em>No guaranteed build.</em></h2></div>
-      <div class="buff-track">
-        <article><span>◈</span><b>Prism Shield</b><small>Block one poison hit</small></article>
-        <article><span>+</span><b>Heart Cache</b><small>Gain maximum health</small></article>
-        <article><span>»</span><b>Phase Boots</b><small>Move 12% faster</small></article>
-        <article><span>⌁</span><b>Antidote</b><small>Poison stops resetting you</small></article>
-        <article><span>↻</span><b>Second Wind</b><small>Survive one elimination</small></article>
-        <article><span>···</span><b>Afterimage</b><small>See your last three steps</small></article>
-      </div>
-    </section>
+      <!-- The only interactive site component: tabs update the selected-mode explanation. -->
+      <section class="split-section" id="systems">
+        <div class="mode-copy">
+          <p class="eyebrow">TWO WAYS TO PLAY</p>
+          <h2>Memory test or<br /><em>rival heist.</em></h2>
+          <div class="mode-tabs" role="tablist" aria-label="Game modes">
+            <button
+              class="mode-tab active"
+              role="tab"
+              aria-selected="true"
+              data-mode="solo"
+            >
+              Solo run
+            </button>
+            <button
+              class="mode-tab"
+              role="tab"
+              aria-selected="false"
+              data-mode="versus"
+            >
+              Two-player
+            </button>
+          </div>
+          <div class="mode-panel" id="mode-copy" aria-live="polite">
+            <h3>Ten-round memory gauntlet</h3>
+            <p>
+              Beat increasingly dense hazard layouts, preserve health, and build
+              a score across ten fresh mazes. Disable buffs for a pure memory
+              challenge.
+            </p>
+            <ul>
+              <li>WASD movement</li>
+              <li>Optional power-up progression</li>
+              <li>Speed and health scoring</li>
+            </ul>
+          </div>
+        </div>
+        <div class="scoreboard" aria-label="Example multiplayer leaderboard">
+          <div class="score-head">
+            <span>ROUND 5 / 7</span><span>LIVE LEADERBOARD</span>
+          </div>
+          <div class="player-row winner">
+            <span class="rank">1</span
+            ><span class="player-orb cyan-bg">P1</span>
+            <div><b>PLAYER ONE</b><small>3 vaults reached</small></div>
+            <strong>3,480</strong>
+          </div>
+          <div class="player-row">
+            <span class="rank">2</span
+            ><span class="player-orb pink-bg">P2</span>
+            <div><b>PLAYER TWO</b><small>2 vaults reached</small></div>
+            <strong>2,910</strong>
+          </div>
+          <div class="score-note">
+            <span>Winner drafts first</span
+            ><span>Rival gets a counter-pick</span>
+          </div>
+        </div>
+      </section>
 
-    <section class="technical" id="technical">
-      <div>
-        <p class="eyebrow">UNDER THE NEON</p>
-        <h2>Built as a real<br><em>C++ game system.</em></h2>
-        <p class="technical-intro">Rendering is separated from a deterministic, window-free simulation model so generation, fairness, scoring, and state transitions can be tested automatically.</p>
-        <div class="tech-pills"><span>C++20</span><span>raylib 5.5</span><span>CMake</span><span>MSVC</span><span>GitHub Actions</span></div>
-      </div>
-      <div class="tech-grid">
-        <article><span>01</span><h3>Procedural topology</h3><p>Randomized depth-first carving and controlled loop insertion create connected, replayable mazes.</p></article>
-        <article><span>02</span><h3>Constrained hazards</h3><p>Every poison placement is rejected unless both players retain a fully poison-free route.</p></article>
-        <article><span>03</span><h3>Stable round state</h3><p>A topology signature verifies that walls never change between blackout frames in one round.</p></article>
-        <article><span>04</span><h3>Automated fairness</h3><p>Headless tests cover connectivity, deterministic generation, multiplayer buffs, and hundreds of hazard layouts.</p></article>
-      </div>
-    </section>
+      <section class="buff-section">
+        <div class="section-heading compact">
+          <p class="eyebrow">BUILD YOUR EDGE</p>
+          <h2>Nine buffs. <em>No guaranteed build.</em></h2>
+        </div>
+        <div class="buff-track">
+          <article>
+            <span>◈</span><b>Prism Shield</b><small>Block one poison hit</small>
+          </article>
+          <article>
+            <span>+</span><b>Heart Cache</b><small>Gain maximum health</small>
+          </article>
+          <article>
+            <span>»</span><b>Phase Boots</b><small>Move 12% faster</small>
+          </article>
+          <article>
+            <span>⌁</span><b>Antidote</b
+            ><small>Poison stops resetting you</small>
+          </article>
+          <article>
+            <span>↻</span><b>Second Wind</b
+            ><small>Survive one elimination</small>
+          </article>
+          <article>
+            <span>···</span><b>Afterimage</b
+            ><small>See your last three steps</small>
+          </article>
+        </div>
+      </section>
 
-    <section class="cta">
-      <p class="eyebrow">READY FOR THE BLACKOUT?</p>
-      <h2>Remember the maze.<br><em>Steal the vault.</em></h2>
-      <div class="hero-actions centered">
-        <a class="button button-primary" href="https://github.com/griter-ui/neon-recall/releases/download/v1.0.0/NeonRecall-Windows-v1.0.0.zip">Download v1.0.0</a>
-        <a class="button button-outline" href="https://github.com/griter-ui/neon-recall" target="_blank" rel="noreferrer">View on GitHub</a>
-      </div>
-      <p class="platform-note">Windows x64 · Free portfolio release · No installer required</p>
-    </section>
-  </main>
+      <!-- Technical section translates source-code architecture into portfolio-friendly language. -->
+      <section class="technical" id="technical">
+        <div>
+          <p class="eyebrow">UNDER THE NEON</p>
+          <h2>Built as a real<br /><em>C++ game system.</em></h2>
+          <p class="technical-intro">
+            Rendering is separated from a deterministic, window-free simulation
+            model so generation, fairness, scoring, and state transitions can be
+            tested automatically.
+          </p>
+          <div class="tech-pills">
+            <span>C++20</span><span>raylib 5.5</span><span>CMake</span
+            ><span>MSVC</span><span>GitHub Actions</span>
+          </div>
+        </div>
+        <div class="tech-grid">
+          <article>
+            <span>01</span>
+            <h3>Procedural topology</h3>
+            <p>
+              Randomized depth-first carving and controlled loop insertion
+              create connected, replayable mazes.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Constrained hazards</h3>
+            <p>
+              Every poison placement is rejected unless both players retain a
+              fully poison-free route.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Stable round state</h3>
+            <p>
+              A topology signature verifies that walls never change between
+              blackout frames in one round.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Automated fairness</h3>
+            <p>
+              Headless tests cover connectivity, deterministic generation,
+              multiplayer buffs, and hundreds of hazard layouts.
+            </p>
+          </article>
+        </div>
+      </section>
 
-  <footer><a class="brand" href="#top"><span>NEON</span> RECALL</a><p>Designed and engineered by griter-ui · 2026</p><a href="https://github.com/griter-ui/neon-recall">Source</a></footer>
-  <script src="script.js"></script>
-</body>
+      <section class="cta">
+        <p class="eyebrow">READY FOR THE BLACKOUT?</p>
+        <h2>Remember the maze.<br /><em>Steal the vault.</em></h2>
+        <div class="hero-actions centered">
+          <a
+            class="button button-primary"
+            href="https://github.com/griter-ui/neon-recall/releases/download/v1.0.0/NeonRecall-Windows-v1.0.0.zip"
+            >Download v1.0.0</a
+          >
+          <a
+            class="button button-outline"
+            href="https://github.com/griter-ui/neon-recall"
+            target="_blank"
+            rel="noreferrer"
+            >View on GitHub</a
+          >
+        </div>
+        <p class="platform-note">
+          Windows x64 · Free portfolio release · No installer required
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top"><span>NEON</span> RECALL</a>
+      <p>Designed and engineered by griter-ui · 2026</p>
+      <a href="https://github.com/griter-ui/neon-recall">Source</a>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

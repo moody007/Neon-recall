@@ -1,3 +1,4 @@
+# Generated CMake output and distributable binaries do not belong in source control.
 /build/
 *.exe
 *.pdb

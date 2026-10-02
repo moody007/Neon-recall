@@ -1,7 +1,9 @@
+# Deployment for the independent static portfolio site, not the C++ executable.
 [build]
   publish = "site"
 
 [[headers]]
+# Apply baseline browser hardening headers to every static response.
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
@@ -9,6 +11,7 @@
     X-Frame-Options = "DENY"
 
 [[headers]]
+# Game screenshots are versioned assets and can be cached for a long time.
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
